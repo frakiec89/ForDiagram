@@ -10,9 +10,7 @@ namespace ForDiagram
     /// </summary>
     public partial class MainWindow : Window
     {
-
         List<MyPropery> properies = new List<MyPropery>();
-
         public MainWindow()
         {
             InitializeComponent();
@@ -129,7 +127,6 @@ namespace ForDiagram
                         {
                             myPropery.Color = "Без цвета";
                         }
-                      
                     }
                 }
                 properies.Add(myPropery);
@@ -138,6 +135,19 @@ namespace ForDiagram
             
            
             foreach (var item in properies)
+            {
+                lbResault.Items.Add(item);
+            }
+        }
+
+        private void runExel_Click(object sender, RoutedEventArgs e)
+        {
+            FileService fileService = new FileService();
+            var l = fileService.GetMyProperies(@"C:\Users\Ahtyamov\Desktop\Лист Microsoft Excel (3).xlsx");
+
+            properies.Clear();
+
+            foreach (var item in l)
             {
                 lbResault.Items.Add(item);
             }

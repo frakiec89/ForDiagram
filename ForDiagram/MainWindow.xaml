@@ -16,9 +16,14 @@
             <StackPanel Margin="5" x:Name="stak_main">
             </StackPanel>
 
+            <Button x:Name="runExel" Click="runExel_Click" >
+                Получить  с  exel
+            </Button>
+            
             <Button x:Name="run" Click="run_Click" >
                 Посмотреть
             </Button>
+
 
 
             <ListBox Margin="5" x:Name="lbResault"></ListBox>
